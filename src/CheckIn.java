@@ -3,14 +3,24 @@ public class CheckIn {
 	
 	private String guestName;
 	private int numOfPeople;
-	private String roomType;
+	private String desiredRoomType;
+	private boolean isInRoom;
+	private HotelRoom hotelRoom;
 	
-	public CheckIn(String guestName, int numOfPeople, String roomType){
+	public CheckIn(String guestName, int numOfPeople, String desiredRoomType){
 		
 		this.guestName = guestName;
 		this.numOfPeople = numOfPeople;
-		this.roomType = roomType;
+		this.desiredRoomtype = desiredRoomType;
+		this.isInRoom = false;
+		this.hotelRoom = null;
 		
+	}
+	
+	public void setInRoom(HotelRoom room){
+		
+		isInRoom = true;
+		hotelRoom = room;
 	}
 	
 	public String getGuestName(){
@@ -22,7 +32,7 @@ public class CheckIn {
 	}
 	
 	public String getRoomType(){
-		return this.roomType;
+		return this.desiredRoomType;
 	}
 
 }
